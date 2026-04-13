@@ -53,8 +53,12 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/80 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-les-primary rounded-lg flex items-center justify-center text-white font-bold text-xl italic">L</div>
+        <div className="flex items-center gap-3">
+          <img
+            src="/assets/logo-les.svg"
+            alt="Logo de L.E.S."
+            className="w-11 h-11 rounded-lg object-cover"
+          />
           <div className="flex flex-col leading-none">
             <span className="font-black text-xl tracking-tighter text-les-primary font-display">L.E.S.</span>
             <span className="text-[8px] font-bold uppercase tracking-widest text-les-accent">Tecnología Asistiva</span>
@@ -657,8 +661,12 @@ const Footer = () => {
     <footer className="bg-les-primary-dark text-white pt-20 pb-10 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 bg-white text-les-primary-dark rounded-lg flex items-center justify-center font-bold text-xl italic">L</div>
+          <div className="flex items-center gap-3 mb-6">
+            <img
+              src="/assets/logo-les-light.svg"
+              alt="Logo de L.E.S."
+              className="w-11 h-11 rounded-lg object-cover"
+            />
             <span className="font-black text-2xl tracking-tighter font-display">L.E.S.</span>
           </div>
           <p className="text-white/60 leading-relaxed mb-6">
