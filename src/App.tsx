@@ -62,7 +62,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/80 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
           <img
             src="/assets/logo-les.svg"
             alt="Logo de L.E.S."
@@ -72,7 +72,7 @@ const Navbar = () => {
             <span className="font-black text-xl tracking-tighter text-les-primary font-display">L.E.S.</span>
             <span className="text-[8px] font-bold uppercase tracking-widest text-les-accent">Tecnología Asistiva</span>
           </div>
-        </div>
+        </a>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-les-text-secondary">
           {navLinks.map((link) => (
@@ -782,7 +782,7 @@ const StickyBottomCTA = () => {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-les-bg selection:bg-les-primary selection:text-white font-sans text-les-text-primary">
+    <div id="inicio" className="min-h-screen bg-les-bg selection:bg-les-primary selection:text-white font-sans text-les-text-primary">
       <Toaster position="top-center" richColors />
       <Navbar />
       <StickyBottomCTA />
