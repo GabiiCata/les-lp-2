@@ -39,6 +39,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const WHATSAPP_URL = "https://wa.me/5491157535240";
+  const INSTAGRAM_URL = "https://www.instagram.com/limpiador.les/";
+  const TIENDANUBE_URL = "https://limpiadorles.mitiendanube.com/";
+
   const navLinks = [
     { name: 'Para quién', href: '#para-quien' },
     { name: 'Beneficios', href: '#beneficios' },
@@ -64,12 +68,14 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button 
-            onClick={() => toast.success("Redirigiendo a WhatsApp...")}
+          <a 
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:block bg-les-accent text-white px-5 py-2 rounded-full font-bold text-sm hover:brightness-110 transition-all shadow-sm"
           >
             Consultar ahora
-          </button>
+          </a>
           <button className="md:hidden text-les-text-primary" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -96,15 +102,15 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <button 
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  toast.success("Redirigiendo a WhatsApp...");
-                }}
-                className="bg-les-accent text-white w-full py-4 rounded-xl font-bold text-lg mt-2"
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="bg-les-accent text-white w-full py-4 rounded-xl font-bold text-lg mt-2 text-center"
               >
                 Hablar por WhatsApp
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
@@ -134,19 +140,23 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
-            <button 
-              onClick={() => toast.success("Conectando con un asesor...")}
+            <a 
+              href="https://wa.me/5491157535240"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-les-accent text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2"
             >
               <MessageCircle size={20} />
               Hablar por WhatsApp
-            </button>
-            <button 
-              onClick={() => document.getElementById('para-quien')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-les-primary border-2 border-les-border px-8 py-4 rounded-2xl font-bold text-lg hover:bg-les-bg transition-all"
+            </a>
+            <a 
+              href="https://limpiadorles.mitiendanube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-les-primary border-2 border-les-border px-8 py-4 rounded-2xl font-bold text-lg hover:bg-les-bg transition-all flex items-center justify-center gap-2"
             >
-              Ver cómo funciona
-            </button>
+              Ver Tienda Online
+            </a>
           </div>
 
           <div className="flex flex-wrap gap-6">
@@ -317,12 +327,14 @@ const SolutionSection = () => {
                 </div>
               </div>
             ))}
-            <button 
-              onClick={() => toast.success("Solicitando cotización...")}
-              className="w-full sm:w-auto bg-les-primary text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl hover:brightness-110 transition-all"
+            <a 
+              href="https://wa.me/5491157535240"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-les-primary text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl hover:brightness-110 transition-all inline-block text-center"
             >
               Solicitar cotización
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -363,12 +375,14 @@ const BenefitsSection = () => {
           ))}
         </div>
         <div className="mt-16 text-center">
-          <button 
-            onClick={() => toast.success("Abriendo WhatsApp...")}
-            className="bg-les-accent text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:brightness-110 transition-all btn-shine"
+          <a 
+            href="https://wa.me/5491157535240"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-les-accent text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:brightness-110 transition-all btn-shine inline-block"
           >
             Pedir asesoramiento ahora
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -533,12 +547,14 @@ const InstitutionalSection = () => {
                 </div>
               ))}
             </div>
-            <button 
-              onClick={() => toast.success("Abriendo formulario B2B...")}
-              className="bg-les-primary text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition-all"
+            <a 
+              href="https://wa.me/5491157535240"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-les-primary text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition-all inline-block"
             >
               Consultar por implementación institucional
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -649,10 +665,22 @@ const Footer = () => {
             Líderes en tecnología asistiva para el baño. Innovación argentina para la autonomía y dignidad de las personas.
           </p>
           <div className="flex gap-4">
-            <motion.a whileHover={{ y: -3 }} href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-les-accent transition-colors">
+            <motion.a 
+              whileHover={{ y: -3 }} 
+              href="https://www.instagram.com/limpiador.les/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-les-accent transition-colors"
+            >
               <Instagram size={20} />
             </motion.a>
-            <motion.a whileHover={{ y: -3 }} href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-les-accent transition-colors">
+            <motion.a 
+              whileHover={{ y: -3 }} 
+              href="https://wa.me/5491157535240" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-les-accent transition-colors"
+            >
               <MessageCircle size={20} />
             </motion.a>
           </div>
@@ -665,13 +693,17 @@ const Footer = () => {
             <li><a href="#beneficios" className="hover:text-white transition-colors">Beneficios</a></li>
             <li><a href="#tecnico" className="hover:text-white transition-colors">Especificaciones</a></li>
             <li><a href="#instituciones" className="hover:text-white transition-colors">Instituciones</a></li>
+            <li><a href="https://limpiadorles.mitiendanube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tienda Online</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-bold text-lg mb-6">Contacto</h4>
           <ul className="space-y-4 text-white/60">
-            <li className="flex items-center gap-3"><PhoneCall size={18} className="text-les-accent" /> +54 11 1234-5678</li>
+            <li className="flex items-center gap-3">
+              <PhoneCall size={18} className="text-les-accent" /> 
+              <a href="https://wa.me/5491157535240" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+54 9 11 5753-5240</a>
+            </li>
             <li className="flex items-center gap-3"><FileText size={18} className="text-les-accent" /> consultas@les-tecnologia.com</li>
             <li className="flex items-center gap-3"><Building2 size={18} className="text-les-accent" /> Buenos Aires, Argentina</li>
           </ul>
@@ -710,13 +742,15 @@ const StickyBottomCTA = () => {
           exit={{ y: 100 }}
           className="fixed bottom-0 left-0 w-full z-[60] p-4 md:hidden"
         >
-          <button 
-            onClick={() => toast.success("Conectando con un asesor...")}
+          <a 
+            href="https://wa.me/5491157535240"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full bg-les-accent text-white py-4 rounded-2xl font-bold text-lg shadow-2xl flex items-center justify-center gap-3"
           >
             <MessageCircle size={24} />
             Solicitar asesoramiento
-          </button>
+          </a>
         </motion.div>
       )}
     </AnimatePresence>
@@ -748,19 +782,23 @@ export default function App() {
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">Mejorá la seguridad, la higiene y la autonomía en el baño</h2>
             <p className="text-white/80 text-lg mb-10">Una solución práctica, duradera y de rápida instalación para quienes más lo necesitan.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => toast.success("Iniciando asesoramiento...")}
-                className="bg-white text-les-primary px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:bg-les-bg transition-all"
+              <a 
+                href="https://wa.me/5491157535240"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-les-primary px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:bg-les-bg transition-all inline-block"
               >
                 Pedir asesoramiento
-              </button>
-              <button 
-                onClick={() => toast.success("Abriendo WhatsApp...")}
+              </a>
+              <a 
+                href="https://wa.me/5491157535240"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-les-accent text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-2"
               >
                 <MessageCircle size={24} />
                 Hablar por WhatsApp
-              </button>
+              </a>
             </div>
           </div>
         </section>
