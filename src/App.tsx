@@ -6,10 +6,7 @@ import {
   Heart, 
   Users, 
   Building2, 
-  ArrowRight, 
   CheckCircle2, 
-  PhoneCall,
-  Plus,
   ChevronDown,
   Menu,
   X,
@@ -18,16 +15,30 @@ import {
   FileText,
   Sparkles,
   Zap,
-  MessageCircle,
   AlertCircle,
   Check,
   Minus,
-  Instagram
+  Instagram,
+  Store
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Toaster, toast } from 'sonner';
+import { Toaster } from 'sonner';
 
 // --- Components ---
+
+const WhatsAppLogo = ({ size = 20, className = '' }: { size?: number; className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M12 2a10 10 0 0 0-8.79 14.76L2 22l5.4-1.18A10 10 0 1 0 12 2Zm5.86 14.24c-.24.67-1.4 1.29-1.93 1.37-.5.07-1.14.1-1.84-.12-.43-.13-.98-.32-1.69-.62-2.97-1.28-4.9-4.27-5.04-4.47-.13-.2-1.2-1.6-1.2-3.05s.77-2.17 1.04-2.47c.27-.3.6-.37.8-.37h.58c.18 0 .41-.07.64.49.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.33-.3.5-.14.17-.3.38-.43.5-.14.13-.28.28-.12.55.15.27.69 1.12 1.48 1.82 1.02.9 1.88 1.18 2.15 1.32.27.13.43.12.58-.08.15-.2.65-.75.83-1 .18-.25.36-.22.6-.13.25.08 1.55.73 1.81.86.27.13.45.2.52.32.07.12.07.72-.17 1.39Z" />
+  </svg>
+);
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,8 +51,6 @@ const Navbar = () => {
   }, []);
 
   const WHATSAPP_URL = "https://wa.me/5491157535240";
-  const INSTAGRAM_URL = "https://www.instagram.com/limpiador.les/";
-  const TIENDANUBE_URL = "https://limpiadorles.mitiendanube.com/";
 
   const navLinks = [
     { name: 'Para quién', href: '#para-quien' },
@@ -76,8 +85,9 @@ const Navbar = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:block bg-les-accent text-white px-5 py-2 rounded-full font-bold text-sm hover:brightness-110 transition-all shadow-sm"
+            className="hidden sm:flex items-center gap-2 bg-les-accent text-white px-5 py-2 rounded-full font-bold text-sm hover:brightness-110 transition-all shadow-sm"
           >
+            <WhatsAppLogo size={16} />
             Consultar ahora
           </a>
           <button className="md:hidden text-les-text-primary" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -111,8 +121,9 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-les-accent text-white w-full py-4 rounded-xl font-bold text-lg mt-2 text-center"
+                className="bg-les-accent text-white w-full py-4 rounded-xl font-bold text-lg mt-2 text-center flex items-center justify-center gap-2"
               >
+                <WhatsAppLogo size={20} />
                 Hablar por WhatsApp
               </a>
             </div>
@@ -150,7 +161,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="bg-les-accent text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2"
             >
-              <MessageCircle size={20} />
+              <WhatsAppLogo size={20} />
               Hablar por WhatsApp
             </a>
             <a 
@@ -159,6 +170,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="bg-white text-les-primary border-2 border-les-border px-8 py-4 rounded-2xl font-bold text-lg hover:bg-les-bg transition-all flex items-center justify-center gap-2"
             >
+              <Store size={20} />
               Ver Tienda Online
             </a>
           </div>
@@ -335,8 +347,9 @@ const SolutionSection = () => {
               href="https://wa.me/5491157535240"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-les-primary text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl hover:brightness-110 transition-all inline-block text-center"
+              className="w-full sm:w-auto bg-les-primary text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl hover:brightness-110 transition-all inline-flex items-center justify-center gap-2 text-center"
             >
+              <WhatsAppLogo size={20} />
               Solicitar cotización
             </a>
           </div>
@@ -383,8 +396,9 @@ const BenefitsSection = () => {
             href="https://wa.me/5491157535240"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-les-accent text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:brightness-110 transition-all btn-shine inline-block"
+            className="bg-les-accent text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:brightness-110 transition-all btn-shine inline-flex items-center gap-2"
           >
+            <WhatsAppLogo size={22} />
             Pedir asesoramiento ahora
           </a>
         </div>
@@ -555,8 +569,9 @@ const InstitutionalSection = () => {
               href="https://wa.me/5491157535240"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-les-primary text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition-all inline-block"
+              className="bg-les-primary text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition-all inline-flex items-center gap-2"
             >
+              <WhatsAppLogo size={20} />
               Consultar por implementación institucional
             </a>
           </div>
@@ -689,7 +704,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-les-accent transition-colors"
             >
-              <MessageCircle size={20} />
+              <WhatsAppLogo size={20} />
             </motion.a>
           </div>
         </div>
@@ -701,7 +716,7 @@ const Footer = () => {
             <li><a href="#beneficios" className="hover:text-white transition-colors">Beneficios</a></li>
             <li><a href="#tecnico" className="hover:text-white transition-colors">Especificaciones</a></li>
             <li><a href="#instituciones" className="hover:text-white transition-colors">Instituciones</a></li>
-            <li><a href="https://limpiadorles.mitiendanube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tienda Online</a></li>
+            <li><a href="https://limpiadorles.mitiendanube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><Store size={16} />Tienda Online</a></li>
           </ul>
         </div>
 
@@ -709,7 +724,7 @@ const Footer = () => {
           <h4 className="font-bold text-lg mb-6">Contacto</h4>
           <ul className="space-y-4 text-white/60">
             <li className="flex items-center gap-3">
-              <PhoneCall size={18} className="text-les-accent" /> 
+              <WhatsAppLogo size={18} className="text-les-accent" /> 
               <a href="https://wa.me/5491157535240" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+54 9 11 5753-5240</a>
             </li>
             <li className="flex items-center gap-3"><FileText size={18} className="text-les-accent" /> pabaru.les@gmail.com</li>
@@ -756,7 +771,7 @@ const StickyBottomCTA = () => {
             rel="noopener noreferrer"
             className="w-full bg-les-accent text-white py-4 rounded-2xl font-bold text-lg shadow-2xl flex items-center justify-center gap-3"
           >
-            <MessageCircle size={24} />
+            <WhatsAppLogo size={24} />
             Solicitar asesoramiento
           </a>
         </motion.div>
@@ -794,8 +809,9 @@ export default function App() {
                 href="https://wa.me/5491157535240"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-les-primary px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:bg-les-bg transition-all inline-block"
+                className="bg-white text-les-primary px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:bg-les-bg transition-all inline-flex items-center gap-2 justify-center"
               >
+                <WhatsAppLogo size={24} />
                 Pedir asesoramiento
               </a>
               <a 
@@ -804,7 +820,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="bg-les-accent text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-2"
               >
-                <MessageCircle size={24} />
+                <WhatsAppLogo size={24} />
                 Hablar por WhatsApp
               </a>
             </div>
