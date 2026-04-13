@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#000"/>
+  <g fill="#f1f1f1">
+    <text x="20" y="79" font-size="52" font-family="Arial Black, Arial, sans-serif" font-weight="900" letter-spacing="-2">LES</text>
+    <path d="M20 90h54c0 6-4 11-10 11H20z"/>
+    <path d="M20 100h50c5 0 9-3 10-8h7c-1 9-8 16-17 16H20z"/>
+  </g>
+</svg>
