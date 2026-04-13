@@ -712,7 +712,7 @@ const Footer = () => {
               <PhoneCall size={18} className="text-les-accent" /> 
               <a href="https://wa.me/5491157535240" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+54 9 11 5753-5240</a>
             </li>
-            <li className="flex items-center gap-3"><FileText size={18} className="text-les-accent" /> consultas@les-tecnologia.com</li>
+            <li className="flex items-center gap-3"><FileText size={18} className="text-les-accent" /> pabaru.les@gmail.com</li>
             <li className="flex items-center gap-3"><Building2 size={18} className="text-les-accent" /> Buenos Aires, Argentina</li>
           </ul>
         </div>
