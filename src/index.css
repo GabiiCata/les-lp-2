@@ -1,118 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap');
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Montserrat", sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
-  --color-les-primary: #2F6EA5;
-  --color-les-primary-dark: #1E4F78;
-  --color-les-secondary: #DCEFFC;
-  --color-les-accent: #17A6B6;
-  --color-les-bg: #F7FAFC;
-  --color-les-text-primary: #1F2937;
-  --color-les-text-secondary: #4B5563;
-  --color-les-success-bg: #DFF4EA;
-  --color-les-border: #D9E4EC;
+  --color-les-primary-sand: #E5D9CF;
+  --color-les-text-taupe: #6D5F56;
+  --color-les-accent-stone: #BDB2A9;
+  --color-les-bg-offwhite: #F7F3F0;
 }
 
 @layer base {
-  body {
-    @apply bg-les-bg text-les-text-primary font-sans antialiased overflow-x-hidden selection:bg-les-primary selection:text-white;
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-.glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
+  body {
+    @apply bg-les-primary-sand font-sans text-lg text-les-text-taupe antialiased;
+  }
 
-.glass-dark {
-  background: rgba(31, 41, 55, 0.9);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.bg-medical-grid {
-  background-size: 40px 40px;
-  background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
-}
-
-.border-technical {
-  border: 1px solid rgba(31, 41, 55, 0.1);
-}
-
-/* 3D Perspective Utilities */
-.perspective-2000 {
-  perspective: 2000px;
-}
-
-.preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-les-bg);
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-les-primary);
-}
-
-/* Animations */
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.02); }
-}
-
-.animate-pulse-soft {
-  animation: pulse-soft 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Shine Effect for CTAs */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shine::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transform: rotate(45deg);
-  transition: 0.5s;
-}
-
-.btn-shine:hover::after {
-  left: 100%;
+  a,
+  button {
+    @apply transition-colors duration-200;
+  }
 }
