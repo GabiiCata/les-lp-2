@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Building2,
-  Check,
   CircleCheck,
   HeartHandshake,
   House,
@@ -91,24 +90,6 @@ export default function App() {
     'Elevación del asiento para reducir el esfuerzo de transferencia.',
     'Higiene integrada para una rutina más limpia y simple.',
     'Instalación en 10 min, sin obra ni modificaciones estructurales.',
-  ];
-
-  const testimonials = [
-    {
-      author: 'María G.',
-      role: 'Familiar',
-      text: 'Con L.E.S. mi mamá volvió a manejar su higiene con más independencia y nosotros estamos más tranquilos.',
-    },
-    {
-      author: 'Dr. Roberto S.',
-      role: 'Director de Clínica',
-      text: 'La implementación mejoró la dinámica del equipo y elevó nuestros estándares de higiene en internación.',
-    },
-    {
-      author: 'Elena P.',
-      role: 'Usuario',
-      text: 'Se instaló rápido y cambió por completo mi rutina: más cómoda, más segura y sin obra en casa.',
-    },
   ];
 
   return (
@@ -224,22 +205,6 @@ export default function App() {
             </div>
             <div className="rounded-[2rem] border border-les-accent-stone/60 bg-les-bg-offwhite p-8">
               <img src="/assets/baño_moderno_2.png" alt="Baño moderno con instalación sanitaria accesible" className="w-full rounded-2xl object-cover" />
-            </div>
-          </div>
-        </Section>
-
-        <Section className="px-6 py-24 md:py-28">
-          <div className="mx-auto max-w-7xl">
-            <h2 className="text-3xl font-semibold md:text-5xl">Confianza de familias y profesionales</h2>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {testimonials.map((t) => (
-                <article key={t.author} className="rounded-3xl border border-les-accent-stone/60 bg-les-bg-offwhite p-8">
-                  <div className="mb-5 flex gap-1 text-les-text-taupe"><Check size={16} /><Check size={16} /><Check size={16} /><Check size={16} /><Check size={16} /></div>
-                  <p className="text-lg leading-relaxed">“{t.text}”</p>
-                  <p className="mt-6 text-base font-medium">{t.author}</p>
-                  <p className="text-base text-les-text-taupe/80">{t.role}</p>
-                </article>
-              ))}
             </div>
           </div>
         </Section>
