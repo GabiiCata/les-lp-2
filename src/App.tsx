@@ -135,7 +135,7 @@ export default function App() {
               </div>
             </div>
             <div className="rounded-[2rem] border border-les-accent-stone/60 bg-les-bg-offwhite p-8">
-              <img src="/assets/Diseño sin título (4).png" alt="Elevador sanitario L.E.S. instalado" className="w-full rounded-2xl object-cover" />
+              <img src="/assets/baño_moderno_con_elevador_sanitario.png" alt="Elevador sanitario L.E.S. instalado" className="w-full rounded-2xl object-cover" />
             </div>
           </div>
         </Section>
@@ -173,7 +173,7 @@ export default function App() {
               </blockquote>
             </div>
             <div className="rounded-[2rem] border border-les-accent-stone/60 bg-les-primary-sand p-8">
-              <img src="/assets/Diseño sin título (2).png" alt="Escenario de uso en baño" className="h-full w-full rounded-2xl object-cover" />
+              <img src="/assets/baño_moderno.png" alt="Escenario de uso en baño" className="h-full w-full rounded-2xl object-cover" />
             </div>
           </div>
         </Section>
@@ -181,7 +181,7 @@ export default function App() {
         <Section id="solucion" className="px-6 py-24 md:py-28">
           <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
             <div className="rounded-[2rem] border border-les-accent-stone/60 bg-les-bg-offwhite p-8">
-              <img src="/assets/Diseño sin título (1).png" alt="Detalle técnico del elevador L.E.S." className="w-full rounded-2xl object-cover" />
+              <img src="/assets/hinodoro_elevador_sanitario_tapa_levantada.png" alt="Detalle técnico del elevador L.E.S." className="w-full rounded-2xl object-cover" />
             </div>
             <div>
               <p className="mb-4 text-sm uppercase tracking-[0.22em] text-les-text-taupe/70">Solución técnica</p>
@@ -208,6 +208,22 @@ export default function App() {
                 <span className="rounded-full border border-les-accent-stone px-4 py-2">Hospitales</span>
                 <span className="rounded-full border border-les-accent-stone px-4 py-2">Geriátricos</span>
               </div>
+            </div>
+          </div>
+        </Section>
+
+
+        <Section className="px-6 py-20 md:py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="mb-4 text-sm uppercase tracking-[0.22em] text-les-text-taupe/70">Espacios reales</p>
+              <h2 className="text-3xl font-semibold md:text-5xl">Integración estética en baños modernos.</h2>
+              <p className="mt-6 text-lg leading-relaxed">
+                El elevador sanitario L.E.S. se adapta al entorno para mantener diseño, comodidad y accesibilidad en el uso diario.
+              </p>
+            </div>
+            <div className="rounded-[2rem] border border-les-accent-stone/60 bg-les-bg-offwhite p-8">
+              <img src="/assets/baño_moderno_2.png" alt="Baño moderno con instalación sanitaria accesible" className="w-full rounded-2xl object-cover" />
             </div>
           </div>
         </Section>
