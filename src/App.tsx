@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { type ComponentType, type ReactNode, useState } from 'react';
 import {
   Bath,
@@ -371,6 +372,8 @@ export default function App() {
           </article>
         </Section>
       </main>
+
+      <Analytics />
 
       <footer className="border-t border-les-border px-5 py-10 sm:px-6">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-lg leading-relaxed text-les-muted md:flex-row md:items-center md:justify-between">
